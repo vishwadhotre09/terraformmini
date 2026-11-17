@@ -1,6 +1,7 @@
 variable "bucket_name" {
   description = "Globally unique name for the S3 bucket."
   type        = string
+  default     = "vishwa-s3-miniproject"
 
   validation {
     condition     = length(var.bucket_name) >= 3 && length(var.bucket_name) <= 63 && can(regex("^[a-z0-9][a-z0-9.-]*[a-z0-9]$", var.bucket_name)) && !can(regex("\\.\\.", var.bucket_name))
